@@ -173,8 +173,9 @@ class AnimatedPullToRefresh extends React.Component {
           onScroll={this.onScrollEvent}
           onTouchEnd={this.isScrolledToTop}
           onScrollEndDrag={this.isScrolledToTop}
+          contentContainerStyle={styles.scrollContainer}
         >
-          <Animated.View style={{marginTop: animateHeight}}>
+          <Animated.View style={{marginTop: animateHeight, flex: 1}}>
             {React.cloneElement(this.props.contentView, {
               scrollEnabled: false,
               ref:'scrollComponentRef',
@@ -189,6 +190,9 @@ class AnimatedPullToRefresh extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  scrollContainer: {
+    flexGrow: 1,
   },
   animationContainer: {
     position: 'absolute',
