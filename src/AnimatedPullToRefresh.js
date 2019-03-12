@@ -173,6 +173,7 @@ class AnimatedPullToRefresh extends React.Component {
           onScroll={this.onScrollEvent}
           onTouchEnd={this.isScrolledToTop}
           onScrollEndDrag={this.isScrolledToTop}
+          onMomentumScrollEnd={this.isScrolledToTop}
           contentContainerStyle={styles.scrollContainer}
         >
           <Animated.View style={{marginTop: animateHeight, flex: 1}}>
